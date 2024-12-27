@@ -1,0 +1,341 @@
+/* Import Inter font - Notion uses Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
+body {
+  margin: 0;
+  background-color: #191919;
+  color: #ffffff;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.App {
+  display: flex;
+  min-height: 100vh;
+  background: #191919;
+}
+
+.sidebar {
+  width: 200px;
+  background: #202020;
+  padding: 12px 14px;
+  border-right: 1px solid #333;
+  position: fixed;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.sidebar-logo img {
+  width: 100%;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin-top: 12px;
+}
+
+.sidebar-menu li {
+  padding: 6px 8px;
+  margin: 2px 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.65);
+  border-radius: 3px;
+  transition: background-color 0.1s;
+  font-weight: 550;
+}
+
+.sidebar-menu li:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.content-wrapper {
+  margin-left: 200px;
+  width: calc(100% - 200px);
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 60px;
+  background: #191919;
+}
+
+.profile-section {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.profile-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #333;
+  margin: 0 auto 20px;
+}
+
+.profile-title {
+  font-size: 40px;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.profile-subtitle {
+  color: rgba(255, 255, 255, 0.65);
+  margin: 8px 0;
+  font-size: 16px;
+  font-weight: 550;
+}
+
+.profile-subtitle span {
+  color: #4CAF50;
+}
+
+.projects-section {
+  margin-top: 40px;
+}
+
+.projects-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.projects-title {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.view-toggle {
+  width: 50px;
+  height: 50px;
+  background-color: #1c1c1c; /* Dark background */
+  border: 1px solid #444;   /* Border for the button */
+  border-radius: 8px;       /* Rounded corners */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.view-toggle:hover {
+  background-color: #333;   /* Slightly lighter on hover */
+  transform: scale(1.1); 
+}
+
+.view-toggle:active {
+  transform: scale(0.95);   /* Pressed effect */
+}
+
+.grid-icon {
+  width: 24px;
+  height: 24px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 4px; /* Spacing between the squares */
+}
+
+.grid-icon::before,
+.grid-icon::after,
+.grid-icon span::before,
+.grid-icon span::after {
+  content: '';
+  width: 8px;    /* Size of each square */
+  height: 8px;
+  background-color: #888; /* Light gray for the squares */
+  border-radius: 2px; /* Optional: Rounded corners for squares */
+}
+
+.filters {
+  display: flex;
+  gap: 2px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #333;
+  margin-bottom: 24px;
+}
+
+.filter-button {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.65);
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 0;
+  position: relative;
+  font-weight: 550;
+  font-family: 'Inter', sans-serif;
+}
+
+.filter-button.active {
+  color: #fff;
+}
+
+.filter-button.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #fff;
+}
+
+.cards-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.cards-grid.gallery {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.cards-grid.list {
+  grid-template-columns: 1fr;
+}
+
+.card {
+  background: #191919;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: all 0.1s ease;
+}
+
+.card:hover {
+  transform: translateY(-1px);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.card-image {
+  aspect-ratio: 16/9;
+  background: #333;
+}
+
+.card-content {
+  padding: 12px;
+}
+
+.card-content h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 550;
+  letter-spacing: -0.01em;
+}
+
+.company {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 13px;
+  margin: 6px 0;
+  font-weight: 550;
+}
+
+.tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.tag {
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.75);
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: 550;
+}
+
+/* Section Divider */
+.section-divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 40px 0;
+}
+
+/* Blogs Section */
+.blogs-section {
+  margin-top: 40px;
+}
+
+.blogs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.blogs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.blog-card {
+  background-color: #222;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+}
+
+.blog-image {
+  width: 100%;
+  height: 200px;
+  background-color: #333;
+}
+
+.blog-content {
+  padding: 20px;
+}
+
+.blog-content h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 550;
+}
+
+.blog-content p {
+  margin: 8px 0 0;
+  color: #999;
+  font-size: 14px;
+}
+
+.blog-meta {
+  display: flex;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.sidebar-menu li.active {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
